@@ -2,8 +2,8 @@
 Ужгородський національний університет
 Факультет інформаційних технологій
 
-ЛАБОРАТОРНА РОБОТА №2
-Тема: Основні команди системи контролю версій Git.
+ЛАБОРАТОРНА РОБОТА №5
+Тема: Деплой проекту на AWS EC2
 
 Виконав студент ІIІ курсу
 Напрям: ІПЗ-2.1 
@@ -11,28 +11,25 @@
 
 Ужгород-2022
 Хід роботи
-1.	Пройти гру Git Learn та зробити скріншоти пройдених рівнів.
- 
- ![image](https://user-images.githubusercontent.com/91634354/193864936-29200e3b-62bc-4cbb-82f4-e9090d7aa72c.png)
- ![image](https://user-images.githubusercontent.com/91634354/193864985-3d755342-739c-4265-a070-fcce597131e1.png)
- 
-2.	Зробити git init папки із файлом  hello.txt та bash скриптом.
-У папці TestGit я створив два файла: hello.txt та bash.sh. Потім я зробив git init цієї папки.
+Спочатку ми зареєструвалися на AWS. Після чого створюємо інстанс EC2
 
-![image](https://user-images.githubusercontent.com/91634354/193865063-9eb16dae-1e46-4584-8ca2-514ea13223a2.png)
- 
-3.	Зробити git commit.
-Після чого завдяки команді git add . я додав обидва файла в гіт і прописав команду git commit –m “GitTestMy”.
- 
- ![image](https://user-images.githubusercontent.com/91634354/193865117-73b92092-1d88-4ccc-9cb5-20ea5ea974d3.png)
- 
-4.	Зробити git push у віддалений репозиторій у вітку lab_works_one_two.
+![image](https://user-images.githubusercontent.com/91634354/204167102-7d755407-8fe8-4561-a1c6-2eb39e4a367f.png)
+![image](https://user-images.githubusercontent.com/91634354/204167106-38faf7e1-e420-4204-9c1e-e6e63098b0fe.png)
+![image](https://user-images.githubusercontent.com/91634354/204167120-843e3083-9328-48b8-a88b-3fb3ec63aa23.png)
 
-![image](https://user-images.githubusercontent.com/91634354/193865133-5229d743-f8b1-4f97-ac01-a1ac3c780a96.png)
-![image](https://user-images.githubusercontent.com/91634354/193865030-781866d3-8fb9-4482-b881-92cde8a43266.png)
- 
-5.	Додати в папку Readme файл із звітом до лабораторної, щоб його можна було передивлятись на репозиторію коли переходиш у вітку.
+Натиснувши на кнопку Connect бачу інструкцію для деплою проекту
 
-![image](https://user-images.githubusercontent.com/91634354/193865187-af0cf8be-9f73-4d58-99b2-8159ea56d10d.png)
- 
-Висновки: на цій лабораторній роботі я навчився працювати з Git, створювати та публікувати репазиторії, а також додавати файли до репазиторій
+![image](https://user-images.githubusercontent.com/91634354/204167140-0b723aa1-b332-41d9-9d7b-7098190f7f47.png)
+
+Виконуємо команду chmod 400 maskerano.pem для того щоб запевнитися що наш ключ не є загально доступним
+Підключаємося до EC2 за допомогою ssh -i "maskerano.pem" ec2-user@ec2-34-207-160-88.compute-1.amazonaws.com
+
+![image](https://user-images.githubusercontent.com/91634354/204167154-b73cd81c-16fb-4601-8c5c-c2dea633d4b5.png)
+
+Запускаємо сервіс systemctl start httpd.service
+
+![image](https://user-images.githubusercontent.com/91634354/204167164-bbe4104d-db1a-4cb8-b083-37ed32c275dc.png)
+![image](https://user-images.githubusercontent.com/91634354/204167172-04dd60d2-654b-474a-8616-15f020d7d573.png)
+
+Бачимо результат по ip-адресі 34.207.160.88
+Висновки: на цій лабораторній роботі я навчився створювати інтанси у EC2 , і деплоїти свій проект на AWS EC2.
